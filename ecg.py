@@ -10,7 +10,7 @@ file=pd.DataFrame(data=file)
 ekg=pysqldf("SELECT * from file WHERE `sample interval`<1000 AND `sample interval`>100")        #setting range of interval to process
 coeffs = pywt.wavedec(ekg.V4, 'db1',level=2)
 from matplotlib import pyplot
-matplotlib.pyplot.plot(coeffs[0])         														#smoothed example plot
+matplotlib.pyplot.plot(coeffs[0])         														#decomposed example plot
 fname='V4_plott_smoothed.pdf'
 matplotlib.pyplot.savefig(fname)
 
